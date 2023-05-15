@@ -173,7 +173,8 @@ if st.button("Get Answer"):
             #print("Azure OpenAI ChatGPT Answer:")
             azureOpenaiResponse  += answer.split("SOURCES:")[0] + "\n"
             #azureOpenaiResponse  += "Sources:" + "\n"
-            for source in answer.split("SOURCES:")[1].replace(" ","").split(","):
+            sources = answer.split("SOURCES:")[1].replace(" ","").split(",")
+            for source in sources:
                 azureOpenaiSources  += str(source) + "\n"
             #azureOpenaiResponse  += answer.split("SOURCES:")[1].replace(" ","").split(",")
         else:
